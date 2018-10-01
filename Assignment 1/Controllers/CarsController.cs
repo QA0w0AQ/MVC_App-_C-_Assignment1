@@ -60,6 +60,7 @@ namespace Assignment_1.Controllers
         }
 
         // GET: Cars/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -110,6 +111,7 @@ namespace Assignment_1.Controllers
         // POST: Cars/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Car car = db.Cars.Find(id);
